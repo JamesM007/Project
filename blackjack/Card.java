@@ -11,11 +11,11 @@ public class Card {
 
 
 
-        public enum Suit { RED, YELLOW , GREEN , BLUE };
+        public enum Suit { CLUBS, SPADES , HEARTS , DIAMONDS };
 
         public enum Value  { ONE , TWO , THREE, FOUR, FIVE, SIX , SEVEN ,
 
-                    EIGHT, NINE, TEN , SKIP , REVERSE , DRAWTWO , DRAWFOUR , WILDCARD };
+                    EIGHT, NINE, TEN, JOKER , QUEEN , KING};
 
         
 

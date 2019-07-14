@@ -30,7 +30,7 @@ public class CardGame {
 
        Deck deck = new Deck( );
 
-       deck.setSize( 60 );
+       deck.setSize( 52 );
 
        deck.generateDeck( );
 
@@ -39,19 +39,29 @@ public class CardGame {
             // create magic hand
 
        MagicHand hand = new MagicHand( );
+       Dealer dealer = new Dealer();
 
-       hand.generateHand( 7 , deck.getDeck( ) );
-
-       System.out.println( hand.toString( ) );
-
+       hand.generateHand(2 , deck.getDeck( ) );
        
+       
+       System.out.println( hand.toString( ) );
+       hand.drawCard(deck.getDeck());
+       System.out.println( hand.toString( ) );
+       hand.drawCard(deck.getDeck());
+       System.out.println( hand.toString( ) );
+       System.out.println(hand.totalValue(deck.getDeck()));
+
+      
 
        Card card = deck.findCard(value, suit);
 
        System.out.println( "Card selected is " + card.toString() );
 
        System.out.println( "Is your card on the magic hand: " + hand.isCardInHand( card ) );
-
+       
+       dealer.playDealer(2, deck);
+       
+       System.out.println();
        
 
    }
