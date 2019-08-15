@@ -11,43 +11,29 @@
 
 package blackjack;
 
-
-
 /**
-
  *
-
  * @author ramses
-
  */
 
 public class MagicHand {
 
-    
-
-    private Card[ ] hand;
-    
-
-    
-
-    
-
-    public void generateHand( int size , Card [ ] deck ) {
-    	
+    public Card[ ] hand;
+       
+    public void generateHand( int size , Card [ ] deck ) {  	
     	//setting maximum hand size to 7
         hand = new Card[ 7 ];
 
         for ( int i = 0 ; i < size ; i ++ ) {
-
-            int randomNumber = ( int ) ( Math.random() * 52 );
-            
-           
+            int randomNumber = ( int ) ( Math.random() * 52 );                     
             hand[ i ] = deck[ randomNumber ];
-
-        }
-
-        
-
+        }        
+    }
+    
+    public void resetHand() {
+    	for ( int i = 0 ; i < hand.length ; i ++ ) {
+    		hand[i] = null;
+    	}
     }
     
     public void drawCard(Card[]deck) {
@@ -57,25 +43,15 @@ public class MagicHand {
     			break;
     		}
     	}
-    }
-    
-
-    
+    }   
 
     public boolean isCardInHand( Card cardSought ) {
-
         for ( Card card : hand ) {
-
             if ( card == cardSought ) {
-
                 return true;
-
             }
-
         }
-
         return false;
-
     }
     
     public int totalValue (Card[]deck) {
@@ -94,19 +70,17 @@ public class MagicHand {
     			case EIGHT: total += 8; break;
     			case NINE: total += 9; break;
     			case TEN: total += 10; break;
-    			case JOKER: total += 11; break;
-    			case QUEEN: total += 12; break;
-    			case KING: total += 13; break;
+    			case JOKER: total += 10; break;
+    			case QUEEN: total += 10; break;
+    			case KING: total += 10; break;
     			
     			default: total = 0;
     			}
-    			System.out.println(total + " ");
-    			
+    			//System.out.println(total + " "); 			
     		}
     	}
     	return total;
     }
-
     
 
     public String toString( ) {
@@ -116,11 +90,8 @@ public class MagicHand {
         for ( Card card : hand ) {
         	if(card!=null)
         	cardString += ( card.toString( ) + " , " );
-
         }
-
         return cardString;
-
     }
     
     
@@ -131,14 +102,10 @@ public class MagicHand {
         for ( Card card : hand ) {
         	if(card!=null)
         	cardString = ( card.toString( ));
-
         }
 
         return cardString;
-
     }
-
-    
 
 }
 

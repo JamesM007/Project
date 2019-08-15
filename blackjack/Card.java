@@ -10,14 +10,11 @@ package blackjack;
 public class Card {
 
 
-
         public enum Suit { CLUBS, SPADES , HEARTS , DIAMONDS };
 
         public enum Value  { ONE , TWO , THREE, FOUR, FIVE, SIX , SEVEN ,
 
-                    EIGHT, NINE, TEN, JOKER , QUEEN , KING};
-
-        
+                    EIGHT, NINE, TEN, JOKER , QUEEN , KING};        
 
 	private final Value value;
 
@@ -34,7 +31,6 @@ public class Card {
         }
 
 
-
 	public Value getValue() {
 
             return this.value;
@@ -42,14 +38,11 @@ public class Card {
 	}
 
 
-
 	public Suit getSuit() {
 
             return suit;
 
-	}
-
-        
+	}        
 
         public String toString( ) {
 
