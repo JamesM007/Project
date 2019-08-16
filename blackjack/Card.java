@@ -1,9 +1,9 @@
 package blackjack;
 
-/**
+/*Reused the enums Suit and Value
+ * Renamed the values to correspond with UNO
  * 
- * @author james
- *
+ * The toString overload is useful and can be used by other programs to get the value of a card object
  */
 
 

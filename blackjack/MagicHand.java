@@ -12,12 +12,8 @@
 package blackjack;
 
 /**
- * added drawCard() - adds one card to hand array
- * added resetHand() - used to empty hand array
- * added totalValue - adds numeric values of all cards in hand and returns int
- * added printCard - returns string of last card drawn
- * @author james
  *
+ * @author ramses
  */
 
 public class MagicHand {
@@ -33,7 +29,7 @@ public class MagicHand {
             hand[ i ] = deck[ randomNumber ];
         }        
     }
-    //
+    
     public void resetHand() {
     	for ( int i = 0 ; i < hand.length ; i ++ ) {
     		hand[i] = null;
