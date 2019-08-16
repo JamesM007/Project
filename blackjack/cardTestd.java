@@ -8,6 +8,11 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+/**
+ * 
+ * @author james
+ *
+ */
 class cardTestd {
 	
 	@BeforeAll
@@ -37,7 +42,8 @@ class cardTestd {
 		dealer = Players.playDealer(2, deck);
 		assertTrue(dealer > 0);
 	}
-	// test for draw card method success in filling hand with one card
+	
+	// test for draw card method success in filling hand with ONLY one card
 	@Test
 	void testDrawCard() {
 		Deck deck = new Deck( );
@@ -45,15 +51,51 @@ class cardTestd {
 	       deck.generateDeck( );
 	       
 	       MagicHand user = new MagicHand( );
-	       user.generateHand(0 , deck.getDeck( ) );
+	       user.generateHand(0 , deck.getDeck( ) ); //hand generated with 0 cards
 	       
 	       user.drawCard(deck.getDeck());
 	       
 	       assertTrue(user.hand[0]!=null && user.hand[1]==null);      
 	}
+	
 	@Test
 	void testResetHand() {
-		//test resertHand
+		Deck deck = new Deck( );
+	       deck.setSize( 52 );
+	       deck.generateDeck( );
+	       
+	       MagicHand user = new MagicHand( );
+	       user.generateHand(7 , deck.getDeck( ) );
+	       
+	       user.resetHand();
+	       
+	       assertTrue(user.hand[0]==null);
+	}
+	
+	@Test
+	void testTotalValue() {
+		Deck deck = new Deck( );
+	       deck.setSize( 52 );
+	       deck.generateDeck( );
+	       
+	       MagicHand user = new MagicHand( );
+	       user.generateHand(7 , deck.getDeck( ) );
+	       
+	       assertTrue(user.totalValue(deck.getDeck())>0);
+	}
+	
+	@Test
+	void testTotalValueFail() {
+		Deck deck = new Deck( );
+	       deck.setSize( 52 );
+	       deck.generateDeck( );
+	       
+	       MagicHand user = new MagicHand( );
+	       user.generateHand(7 , deck.getDeck( ) );
+	       
+	       user.resetHand();
+	       //hand has been emptied, cannot return a value
+	       assertFalse(user.totalValue(deck.getDeck())>0);
 	}
 
 }
