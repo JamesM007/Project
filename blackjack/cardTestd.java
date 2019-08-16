@@ -31,6 +31,17 @@ class cardTestd {
 	@AfterEach
 	void tearDown() throws Exception {
 	}
+	@Test
+	void testPlayerValue() {
+			Deck deck = new Deck( );
+		       deck.setSize( 52 );
+		       deck.generateDeck( );
+		       
+			int user = 0;
+			user = Players.playUser(2, deck);
+			assertTrue(user > 0);
+	}
+	
 	//test for dealer completing turn and returning a score
 	@Test
 	void testDealerValue() {
