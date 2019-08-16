@@ -20,10 +20,11 @@ public class Players {
 	       System.out.println("YOU DRAW: " + user.toString());
 	       		//ask user to draw card, loop until user says no, or end if hand total is 21 or above
 	    	   while (select.toUpperCase().contentEquals("Y")) {
-	    		   while(user.totalValue(deck.getDeck())<21) {
+	    		   while(user.totalValue(deck.getDeck())<21 && select.toUpperCase().contentEquals("Y")) {
 	    			   System.out.println("TOTAL VALUE " + user.totalValue(deck.getDeck()));    	   
 	    			   System.out.println("DRAW CARD? [Y/N] ");
 	    			   select = in.nextLine();
+	    			   
 	    		   //ask user to re-enter input if invalid option is given
 	       			while (!select.equalsIgnoreCase("Y") && !select.equalsIgnoreCase("N")) {
 	       				System.out.println(!select.equalsIgnoreCase("N"));
