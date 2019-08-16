@@ -1,5 +1,10 @@
 package blackjack;
 
+/**
+ * 
+ * @author james
+ *
+ */
 
 public class Deck {
 

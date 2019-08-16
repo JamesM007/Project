@@ -2,8 +2,9 @@ package blackjack;
 import java.util.Scanner;
 
 /**
+ * 
+ * @author james
  *
- * @author ramses
  */
 
 public class CardGame {   
